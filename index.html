@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cell {
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        background-size: 100%;
+        font-weight: 700;
+        text-align: center;
+        float: left;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .row {
+        height: 24px;
+    }
+
+    .opened {
+        cursor: unset;
+    }
+
+    .game-container {
+        display: inline-flex;
+        flex-flow: column;
+        height: 100%;
+        z-index: 1;
+    }
+
+    #game-over-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 2;
+        display: none;
+    }
+
+    .wrapper-border-left-top {
+        background-image: url('https://minesweeper.online/img/skins/hd/corner_up_left_2x.png?v=2');
+    }
+
+    .wrapper-border-hor {
+        background-image: url('https://minesweeper.online/img/skins/hd/border_hor_2x.png?v=2');
+    }
+
+    .wrapper-border-right-top {
+        background-image: url('	https://minesweeper.online/img/skins/hd/corner_up_right_2x.png?v=2');
+    }
+
+    #face {
+        width: 39px;
+        height: 39px;
+        background-size: 100%;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .game-header {
+        z-index: 3;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        border: 5px solid #818181;
+        border-bottom-color: whitesmoke;
+        border-right-color: whitesmoke;
+        background: silver;
+    }
+
+    #total-bombs,
+    #duration {
+        display: flex;
+        width: 62px;
+        height: 39px;
+        background: #3e3d3d;
+        color: red;
+        justify-content: center;
+        align-items: center;
+        font-size: 34px;
+        font-weight: bold;
+    }
+
+    #game {
+        border: 5px solid #818181;
+        border-bottom-color: whitesmoke;
+        border-right-color: whitesmoke;
+        border-top: un;
+    }
+
+    .frame {
+        border: 10px solid silver;
+    }
+
+    .frame-game {
+        border-top: 0;
+    }
+
+    .mode-slection-container {
+        margin: 20px 0;
+    }
+</style>
+
+<body>
+    <div class="app">
+        <h1>Minesweeper</h1>
+        <div class="game-container">
+            <div class="mode-slection-container">
+                <p>Select difficulty:</p>
+
+                <label for="beginner">Beginner</label>
+                <input type="radio" id="beginner" name="mode" value="BEGINNER" checked>
+
+                <label for="intermediate">Intermediate</label>
+                <input type="radio" id="intermediate" name="mode" value="INTERMEDIATE">
+
+                <label for="expert">Expert</label>
+                <input type="radio" id="expert" name="mode" value="EXPERT">
+            </div>
+
+            <div class="frame">
+                <div class="game-header">
+                    <div id="total-bombs"></div>
+                    <div id="face"></div>
+                    <div id="duration"></div>
+                </div>
+            </div>
+            <div class="frame frame-game">
+
+                <div id="game">
+
+                </div>
+            </div>
+            <div id="game-over-overlay">
+
+            </div>
+        </div>
+    </div>
+    <script src="./minesweeper.js"></script>
+
+</body>
+
+</html>
