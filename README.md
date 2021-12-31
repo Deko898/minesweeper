@@ -1,3 +1,3 @@
-# minesweeper
+# Minesweeper
 
-Demo: https://minesw33p3r.herokuapp.com/
+#Demo: https://minesw33p3r.herokuapp.com/
