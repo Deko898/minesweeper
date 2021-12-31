@@ -236,7 +236,6 @@ function renderCells() {
 
         if (cell.value === BOMB_SYMBOL) {
           cellEl.style.backgroundImage = "url(" + cell.bombUrl + ")";
-          // game over
         } else {
           cellEl.style.backgroundImage = "url(" + cell.emptyUrl + ")";
         }
